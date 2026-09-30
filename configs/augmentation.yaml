@@ -1,0 +1,42 @@
+# Experiment B — Data Augmentation (README ข้อ 8)
+# ใช้โมเดลเดียวที่เลือกจาก Experiment A แล้วเปลี่ยนเฉพาะ augmentation
+
+img_size: 96
+batch_size: 128
+epochs: 10
+lr: 0.001
+weight_decay: 0.0001
+label_smoothing: 0.1
+pretrained: true
+seed: 42
+device: auto
+early_stop_patience: 3
+eval_batch_size: 256
+
+imbalance: none
+sampling_power: 0.5
+
+# โมเดลที่ชนะจาก Experiment A — แก้ค่านี้ก่อนรัน
+# model: resnet18
+model: mobilenet_v3_small
+
+# 4 ระดับตาม README: ไม่ทำ -> มาตรฐาน -> ออกแบบเพื่อภาษาไทย -> บวก RandAugment
+augmentations:
+  - none
+  - standard
+  - thai_specific
+  - thai_randaugment
+
+split:
+  type: random
+  sources: D1
+  val_ratio: 0.1
+  test_ratio: 0.1
+
+limit_per_class: null
+
+# RQ2 ตัวจริง: หลังเทรนด้วย D1 แต่ละ policy จะถูกทดสอบกับ source ที่ไม่เคยเห็นด้วย
+# เพื่อดูว่า augmentation ช่วยลด generalization gap ได้ไหม (ไม่ใช่แค่วัดในโดเมนเดียว)
+cross_test_sources:
+  - D2
+  - D3

@@ -1,0 +1,58 @@
+# Experiment A — Model Comparison (README ข้อ 7)
+# เทียบ architecture ภายใต้ setup เดียวกันทุกอย่าง เปลี่ยนแค่โมเดล
+
+img_size: 96
+batch_size: 128
+epochs: 8
+lr: 0.001
+weight_decay: 0.0001
+label_smoothing: 0.1
+pretrained: true
+seed: 42
+device: auto              # auto = ใช้ GPU ถ้ามี (MPS/CUDA)
+early_stop_patience: 3
+eval_batch_size: 256
+
+# class imbalance: none | class_weight | weighted_sampling  (README ข้อ 5)
+imbalance: none
+sampling_power: 0.5       # ใช้เมื่อ imbalance = weighted_sampling (0 = ไม่ปรับ, 1 = ทุกคลาสเท่ากัน)
+
+# augmentation ที่ใช้ตลอด Experiment A (คงที่เพื่อให้เทียบโมเดลได้ยุติธรรม)
+augmentation: standard
+
+# Stage 1 ของ README ข้อ 15
+models:
+  - custom_cnn
+  - resnet18
+  - efficientnet_b0
+  - densenet121
+  - mobilenet_v3_small
+
+# ปรับสถาปัตยกรรมของ custom_cnn ได้ที่นี่
+# ค่าเริ่มต้น 4 stage × 2 conv (ลึกกว่าแผนภาพใน README เพราะมี 81 คลาส)
+# ถ้าอยากได้ตรงตามแผนภาพ README เป๊ะ ใช้ widths: [32, 64] และ convs_per_stage: 1
+model_kwargs:
+  custom_cnn:
+    widths: [32, 64, 128, 256]
+    convs_per_stage: 2
+    dropout: 0.2
+
+# การแบ่งข้อมูล: baseline ใช้ Dataset A (D1) แบบ random split
+split:
+  type: random
+  sources: D1
+  val_ratio: 0.1
+  test_ratio: 0.1
+
+# Experiment C ใช้ค่าพวกนี้ (hard character mining)
+# model: resnet18           # โมเดลที่เลือกจาก Experiment A
+model: mobilenet_v3_small   # โมเดลที่เลือกจาก Experiment A
+hard_f1_threshold: 0.9    # F1 ต่ำกว่านี้ = hard character
+hard_top_k: 10            # จำนวน hard character สูงสุด (ใช้เมื่อไม่มีคลาสไหนต่ำกว่า threshold)
+hard_min_support: 20      # ไม่นับคลาสที่มีตัวอย่างใน test น้อยกว่านี้
+finetune_epochs: 3
+finetune_lr_scale: 0.3
+finetune_sampling_power: 0.75
+
+# ใส่ตัวเลขเพื่อทดสอบ pipeline ให้เร็ว เช่น 20 = ใช้ไม่เกิน 20 รูปต่อคลาสต่อ source
+limit_per_class: null

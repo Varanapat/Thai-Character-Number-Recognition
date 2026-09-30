@@ -1,0 +1,47 @@
+# Experiment D — Generalization (README ข้อ 10-12) ⭐
+# random split (in-domain) vs cross-source 6 ทิศ vs unseen font
+
+img_size: 96
+batch_size: 128
+epochs: 10
+lr: 0.001
+weight_decay: 0.0001
+label_smoothing: 0.1
+pretrained: true
+seed: 42
+device: auto
+early_stop_patience: 3
+eval_batch_size: 256
+
+imbalance: none
+sampling_power: 0.5
+
+# โมเดลและ augmentation ที่เลือกจาก Experiment A และ B
+model: mobilenet_v3_small
+augmentation: thai_specific
+
+# Dataset A/B/C = D1/D2/D3 (ดู src/utils/common.py: SOURCE_ROLES)
+# แต่ละ source จะถูกเทรนแบบ random split หนึ่งครั้ง แล้วเอาโมเดลนั้นไปทดสอบกับอีก 2 source
+# รวมเป็น cross-source 6 ทิศตาม README
+sources:
+  - D1
+  - D2
+  - D3
+
+split:
+  type: random
+  val_ratio: 0.1
+  test_ratio: 0.1
+
+# D3. Unseen Font Test — กันกลุ่มฟอนต์/ลายมือทั้งกลุ่มไว้เป็น test
+# id กลุ่มมาจากชื่อไฟล์ (D3 = A1..E8, D2 = SetN_F1/M1, D1 = be/bc/bl/ce)
+# ระบุ holdout_groups เองได้ เช่น ["D3:E1", "D3:E2"] ถ้าไม่ระบุจะสุ่มตาม holdout_ratio
+unseen_font:
+  - source: D3
+    holdout_ratio: 0.25
+    val_ratio: 0.1
+  - source: D2
+    holdout_ratio: 0.25
+    val_ratio: 0.1
+
+limit_per_class: null
