@@ -1,0 +1,9 @@
+{
+  "strategy": "S3_combined",
+  "sources": [
+    "D1",
+    "D2",
+    "D3"
+  ],
+  "minutes": 57.3
+}

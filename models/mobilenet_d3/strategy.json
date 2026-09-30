@@ -1,0 +1,7 @@
+{
+  "strategy": "S2_d3_only",
+  "sources": [
+    "D3"
+  ],
+  "minutes": 12.5
+}

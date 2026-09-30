@@ -1,0 +1,109 @@
+{
+  "model": "mobilenet_v3_small",
+  "augmentation": "thai_specific",
+  "best_score": 0.9921461772719987,
+  "best_epoch": 8,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.9033386413113318,
+      "train_acc": 0.6845075514138818,
+      "sec": 119.10965824127197,
+      "val_acc": 0.9440615483250521,
+      "val_loss": 0.47583308815956116
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.8695941568953213,
+      "train_acc": 0.9689307519280206,
+      "sec": 178.9022741317749,
+      "val_acc": 0.9764385318159962,
+      "val_loss": 0.2082919031381607
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.8303332373231725,
+      "train_acc": 0.9787516066838047,
+      "sec": 205.29940819740295,
+      "val_acc": 0.9831703798685687,
+      "val_loss": 0.1597345471382141
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.8153701836774772,
+      "train_acc": 0.9817440552699229,
+      "sec": 231.2237319946289,
+      "val_acc": 0.988299406956243,
+      "val_loss": 0.1338672637939453
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.805748651297356,
+      "train_acc": 0.9852787596401028,
+      "sec": 258.9707410335541,
+      "val_acc": 0.9874979964737939,
+      "val_loss": 0.14557820558547974
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.800021046537973,
+      "train_acc": 0.9866243573264781,
+      "sec": 215.69975113868713,
+      "val_acc": 0.9902227921141209,
+      "val_loss": 0.12973187863826752
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.7944975141387979,
+      "train_acc": 0.988271208226221,
+      "sec": 229.01543998718262,
+      "val_acc": 0.9915050488860394,
+      "val_loss": 0.13104771077632904
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.7893077760245316,
+      "train_acc": 0.9897373071979434,
+      "sec": 204.65460681915283,
+      "val_acc": 0.9921461772719987,
+      "val_loss": 0.12553246319293976
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.7878771968243361,
+      "train_acc": 0.9898176413881749,
+      "sec": 200.14320707321167,
+      "val_acc": 0.991985895175509,
+      "val_loss": 0.1252916306257248
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.7855307453702225,
+      "train_acc": 0.9906008997429306,
+      "sec": 194.66376996040344,
+      "val_acc": 0.991985895175509,
+      "val_loss": 0.12472037971019745
+    }
+  ],
+  "checkpoint": "/Users/thiya/Documents/GitHub/Project-1-Thai-Character-Number-Recognition/models/mobilenet_d1/best.pt",
+  "config": {
+    "val_ratio": 0.1,
+    "test_ratio": 0.1,
+    "augmentation": "thai_specific",
+    "img_size": 96,
+    "batch_size": 128,
+    "epochs": 10,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "label_smoothing": 0.1,
+    "pretrained": true,
+    "seed": 42,
+    "device": "auto",
+    "early_stop_patience": 3,
+    "eval_batch_size": 256,
+    "imbalance": "none",
+    "sampling_power": 0.5,
+    "limit_per_class": null,
+    "model": "mobilenet_v3_small"
+  }
+}
