@@ -3,16 +3,16 @@
 ไม่เทรนอะไรทั้งสิ้น แค่อ่านผลที่ไฟล์ S1-S6 บันทึกไว้แล้วจัดตารางให้อ่านง่าย
 ตอบคำถามข้อ 11 ของ Model_strategy.md: รวมความรู้ตอนเทรน (S3) เทียบกับ รวมตอน inference (S4-S6)
 
-    python3 S7_compare.py
-    python3 S7_compare.py --scope in_domain    # ดูสนามในโดเมนแทน
-    python3 S7_compare.py --scope all
+    python3 strategies/S7_compare.py
+    python3 strategies/S7_compare.py --scope in_domain    # ดูสนามในโดเมนแทน
+    python3 strategies/S7_compare.py --scope all
 """
 import argparse
 import csv
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent.parent
 TABLE = ROOT / "results" / "tables" / "strategy_results.csv"
 
 
@@ -35,8 +35,8 @@ def main():
         raise SystemExit(
             f"ยังไม่มีผลใน scope = {args.scope}\n"
             "ถ้าอยากได้สนาม unseen ให้รันโดยตัดบางแหล่งออก เช่น\n"
-            "  python3 S3_combined.py --train-sources D1 D2\n"
-            "  python3 S5_prob_average.py --members D1 D2")
+            "  python3 strategies/S3_combined.py --train-sources D1 D2\n"
+            "  python3 strategies/S5_prob_average.py --members D1 D2")
 
     latest = {}   # เก็บเฉพาะผลล่าสุดของแต่ละ (strategy, เทรนด้วย, ทดสอบกับ)
     for r in rows:
@@ -67,7 +67,7 @@ def main():
     best = ranked[0]
     print(f"\nดีที่สุดใน scope นี้: {best[0]} (เทรนด้วย {best[1]}) "
           f"macro F1 {best[2]:.4f} | inference {best[5]:.2f} ms/ภาพ")
-    print(f"วันจริงให้รัน: python3 {best[0]}.py path/to/new_images")
+    print(f"วันจริงให้รัน: python3 strategies/{best[0]}.py path/to/new_images")
 
     singles = [r for r in ranked if r[0].startswith(("S1", "S2", "S3"))]
     ens = [r for r in ranked if r[0].startswith(("S4", "S5", "S6"))]

@@ -34,7 +34,7 @@ configs/strategy_base.yaml   ← ค่า epoch, lr, batch size, augmentation (
 ### โหมดที่ 1 — ไม่ใส่ path = เทรนและวัดผล
 
 ```bash
-python3 S3_combined.py
+python3 strategies/S3_combined.py
 ```
 
 ```text
@@ -56,7 +56,7 @@ python3 S3_combined.py
 ### โหมดที่ 2 — ใส่ path = ทำนายรูปใหม่
 
 ```bash
-python3 S3_combined.py PrintAksorn_dataset/test --labels filename
+python3 strategies/S3_combined.py PrintAksorn_dataset/test --labels filename
 ```
 
 ```text
@@ -138,7 +138,7 @@ S3 ทำได้เท่าโมเดลเฉพาะทางในโ�
 ถ้ายังส่งงานทันควรพิจารณารันใหม่ด้วยเวอร์ชัน thai_specific
 
 ```bash
-python3 S3_combined.py test_dataset --labels filename \
+python3 strategies/S3_combined.py test_dataset --labels filename \
   --checkpoint models/mobilenet_d1_d2_d3_thai_specific_bak/best.pt
 ```
 

@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ทำนายรูปใหม่ด้วยโมเดลที่เทรนไว้แล้ว (ไม่ต้องเทรนใหม่ ไม่ต้องมี Dataset)
 
 ```bash
-python3 S3_combined.py path/to/images
+python3 strategies/S3_combined.py path/to/images
 ```
 
 ได้ `submission/S3_output.csv` ที่มี path, คลาสที่ทำนาย, ตัวอักษร และความมั่นใจ

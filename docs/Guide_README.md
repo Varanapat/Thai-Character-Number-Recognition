@@ -95,17 +95,17 @@ D2 ไม่มีคลาสเลขไทยและขาดสระบ�
   | 2 | S5 (prob average ensemble) | D1+D2+D3 | 0.8186 |
   | 3 | S4 (majority vote ensemble) | D1+D2+D3 | 0.7968 |
 
-  สรุป: ตอนนี้ **โมเดลเดียวที่เทรนรวมทั้ง 3 แหล่ง (S3) ดีกว่า ensemble ทุกแบบ** ผลอาจเปลี่ยนได้ถ้ารันซ้ำหรือเปลี่ยน augmentation (ดู RESULT_README.md หมายเหตุท้าย Experiment B) — รัน `python3 S7_compare.py` เพื่อดูอันดับล่าสุดเสมอ ก่อนตัดสินใจว่าจะใช้ strategy ไหนวันจริง
+  สรุป: ตอนนี้ **โมเดลเดียวที่เทรนรวมทั้ง 3 แหล่ง (S3) ดีกว่า ensemble ทุกแบบ** ผลอาจเปลี่ยนได้ถ้ารันซ้ำหรือเปลี่ยน augmentation (ดู RESULT_README.md หมายเหตุท้าย Experiment B) — รัน `python3 strategies/S7_compare.py` เพื่อดูอันดับล่าสุดเสมอ ก่อนตัดสินใจว่าจะใช้ strategy ไหนวันจริง
 
 ---
 
 ## 5. วันจริง — ทำนายข้อมูลใหม่
 
 ```bash
-python3 S3_combined.py path/to/new_images
+python3 strategies/S3_combined.py path/to/new_images
 ```
 
-หรือเปลี่ยนเป็นไฟล์ที่ `S7_compare.py` แนะนำ ณ ตอนนั้น (เช่น `python3 S5_prob_average.py path/to/new_images`) กำหนดที่เก็บผลเองได้ด้วย `--out submission/final.csv` ไม่ต้อง preprocess รูปเอง — ทุก strategy script preprocess ให้อัตโนมัติด้วยขั้นตอนเดียวกับตอนเทรน (grayscale → crop กรอบหมึก → pad จัตุรัส → resize) รองรับนามสกุล `.jpg` `.jpeg` `.png` `.bmp`
+หรือเปลี่ยนเป็นไฟล์ที่ `S7_compare.py` แนะนำ ณ ตอนนั้น (เช่น `python3 strategies/S5_prob_average.py path/to/new_images`) กำหนดที่เก็บผลเองได้ด้วย `--out submission/final.csv` ไม่ต้อง preprocess รูปเอง — ทุก strategy script preprocess ให้อัตโนมัติด้วยขั้นตอนเดียวกับตอนเทรน (grayscale → crop กรอบหมึก → pad จัตุรัส → resize) รองรับนามสกุล `.jpg` `.jpeg` `.png` `.bmp`
 
 ผลลัพธ์เป็น CSV ที่ `submission/<strategy>_output.csv` คอลัมน์หลัก:
 
