@@ -1,0 +1,6 @@
+model,accuracy,macro_f1,params_m,inference_ms,best_epoch,train_minutes
+custom_cnn,0.992,0.9631,1.19,0.75,6,17.3
+resnet18,0.9934,0.9792,11.22,1.35,7,24.0
+efficientnet_b0,0.9929,0.9777,4.11,4.84,8,30.7
+densenet121,0.9937,0.9794,7.04,8.48,6,37.8
+mobilenet_v3_small,0.9929,0.9813,1.6,3.19,7,6.6

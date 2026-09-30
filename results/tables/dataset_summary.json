@@ -1,0 +1,35 @@
+[
+  {
+    "dataset": "A (D1)",
+    "source_name": "DL - AJ",
+    "images": 62393,
+    "classes": 76,
+    "min_per_class": 1,
+    "max_per_class": 4856,
+    "mean_per_class": 820,
+    "imbalance_ratio": 4856.0,
+    "groups": 5
+  },
+  {
+    "dataset": "B (D2)",
+    "source_name": "THI - C168",
+    "images": 76927,
+    "classes": 68,
+    "min_per_class": 990,
+    "max_per_class": 1195,
+    "mean_per_class": 1131,
+    "imbalance_ratio": 1.2,
+    "groups": 9
+  },
+  {
+    "dataset": "C (D3)",
+    "source_name": "Burapha",
+    "images": 23835,
+    "classes": 77,
+    "min_per_class": 168,
+    "max_per_class": 975,
+    "mean_per_class": 309,
+    "imbalance_ratio": 5.8,
+    "groups": 56
+  }
+]

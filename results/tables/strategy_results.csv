@@ -1,0 +1,42 @@
+timestamp,strategy,trained_on,test_source,scope,accuracy,macro_f1,n_test,inference_ms,train_minutes,params_m,val_acc,checkpoint,augmentation,epochs,seed,note
+2026-09-24 19:49,S1_d1_only [smoke],D1,D1,in_domain,0.0224,0.008,134,2.75,0.0,1.6,0.0224,models/_smoke_mobilenet_d1/best.pt,thai_specific,1,42,
+2026-09-24 19:49,S1_d1_only [smoke],D1,D2,unseen,0.014,0.0069,1360,2.75,0.0,1.6,0.0224,models/_smoke_mobilenet_d1/best.pt,thai_specific,1,42,
+2026-09-24 19:49,S1_d1_only [smoke],D1,D3,unseen,0.0104,0.0058,1540,2.75,0.0,1.6,0.0224,models/_smoke_mobilenet_d1/best.pt,thai_specific,1,42,
+2026-09-24 20:02,S2_d3_only,D3,D1,unseen,0.8357,0.673,62393,18.96,12.5,1.6,0.9874,models/mobilenet_d3/best.pt,thai_specific,10,42,
+2026-09-24 20:02,S2_d3_only,D3,D2,unseen,0.6808,0.5948,76927,18.96,12.5,1.6,0.9874,models/mobilenet_d3/best.pt,thai_specific,10,42,
+2026-09-24 20:02,S2_d3_only,D3,D3,in_domain,0.9895,0.9901,2384,18.96,12.5,1.6,0.9874,models/mobilenet_d3/best.pt,thai_specific,10,42,
+2026-09-24 20:25,S1_d1_only,D1,D1,in_domain,0.9909,0.9814,6239,6.17,35.2,1.6,0.9921,models/mobilenet_d1/best.pt,thai_specific,10,42,
+2026-09-24 20:25,S1_d1_only,D1,D2,unseen,0.435,0.3363,76927,6.17,35.2,1.6,0.9921,models/mobilenet_d1/best.pt,thai_specific,10,42,
+2026-09-24 20:25,S1_d1_only,D1,D3,unseen,0.4959,0.4655,23835,6.17,35.2,1.6,0.9921,models/mobilenet_d1/best.pt,thai_specific,10,42,
+2026-09-24 20:31,S2b_d2_only,D2,D1,unseen,0.833,0.5405,62393,4.13,41.4,1.6,0.8855,models/mobilenet_d2/best.pt,thai_specific,10,42,
+2026-09-24 20:31,S2b_d2_only,D2,D2,in_domain,0.8816,0.8817,7693,4.13,41.4,1.6,0.8855,models/mobilenet_d2/best.pt,thai_specific,10,42,
+2026-09-24 20:31,S2b_d2_only,D2,D3,unseen,0.5545,0.6588,23835,4.13,41.4,1.6,0.8855,models/mobilenet_d2/best.pt,thai_specific,10,42,
+2026-09-24 20:36,S1,D1,test,unseen,0.6805,0.6563,817,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:36,S2,D3,test,unseen,0.7466,0.6909,817,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:36,S2b,D2,test,unseen,0.6769,0.624,817,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:36,S3,D1+D2+D3,test,unseen,0.8776,0.8592,817,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:37,S4,D1+D2+D3,test,unseen,0.8237,0.7935,817,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:37,S5,D1+D2+D3,test,unseen,0.8409,0.8186,817,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:46,S1,D1,test,unseen,0.6832,0.6589,827,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:46,S2,D3,test,unseen,0.7497,0.6945,827,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:46,S2b,D2,test,unseen,0.6771,0.626,827,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:47,S2b,D2,test,unseen,0.6771,0.626,827,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:47,S3,D1+D2+D3,test,unseen,0.8863,0.8685,827,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:47,S4,D1+D2+D3,test,unseen,0.8259,0.7968,827,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-24 20:47,S3_combined,D1+D2+D3,D1,in_domain,0.9912,0.9813,6239,2.77,57.3,1.6,0.9423,models/mobilenet_d1_d2_d3/best.pt,thai_specific,10,42,
+2026-09-24 20:47,S3_combined,D1+D2+D3,D2,in_domain,0.885,0.8482,7693,2.77,57.3,1.6,0.9423,models/mobilenet_d1_d2_d3/best.pt,thai_specific,10,42,
+2026-09-24 20:47,S3_combined,D1+D2+D3,D3,in_domain,0.9849,0.9832,2384,2.77,57.3,1.6,0.9423,models/mobilenet_d1_d2_d3/best.pt,thai_specific,10,42,
+2026-09-24 21:38,S3_combined [smoke],D1+D2+D3,D1,in_domain,0.1231,0.069,268,2.47,0.1,1.6,0.0955,models/_smoke_mobilenet_d1_d2_d3/best.pt,thai_randaugment,1,42,
+2026-09-24 21:38,S3_combined [smoke],D1+D2+D3,D2,in_domain,0.0809,0.0577,272,2.47,0.1,1.6,0.0955,models/_smoke_mobilenet_d1_d2_d3/best.pt,thai_randaugment,1,42,
+2026-09-24 21:38,S3_combined [smoke],D1+D2+D3,D3,in_domain,0.0844,0.0558,308,2.47,0.1,1.6,0.0955,models/_smoke_mobilenet_d1_d2_d3/best.pt,thai_randaugment,1,42,
+2026-09-24 22:04,S3_combined,D1+D2+D3,D1,in_domain,0.9897,0.9611,12478,2.47,25.5,1.6,0.9386,models/mobilenet_d1_d2_d3/best.pt,thai_randaugment,10,42,
+2026-09-24 22:04,S3_combined,D1+D2+D3,D2,in_domain,0.8837,0.7816,15386,2.47,25.5,1.6,0.9386,models/mobilenet_d1_d2_d3/best.pt,thai_randaugment,10,42,
+2026-09-24 22:04,S3_combined,D1+D2+D3,D3,in_domain,0.9824,0.9806,4767,2.47,25.5,1.6,0.9386,models/mobilenet_d1_d2_d3/best.pt,thai_randaugment,10,42,
+2026-09-25 15:00,S3,D1+D2+D3,test,unseen,0.8224,0.687,456,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-25 15:00,S3,D1+D2+D3,test,unseen,0.8377,0.742,456,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-25 15:01,S1,D1,test,unseen,0.6447,0.5058,456,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-25 15:01,S2,D3,test,unseen,0.7412,0.5855,456,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-25 15:01,S2b,D2,test,unseen,0.5965,0.4457,456,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-25 15:01,S3,D1+D2+D3,test,unseen,0.8224,0.687,456,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-25 15:01,S4,D1+D2+D3,test,unseen,0.8158,0.6872,456,,,,,,,,,เฉลยจากชื่อไฟล์
+2026-09-25 15:01,S5,D1+D2+D3,test,unseen,0.8202,0.6871,456,,,,,,,,,เฉลยจากชื่อไฟล์

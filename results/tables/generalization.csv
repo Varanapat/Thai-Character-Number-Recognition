@@ -1,0 +1,12 @@
+setting,train,test,accuracy,macro_f1,gap
+random_split,D1,D1,0.9909,0.9814,
+cross_source,D1,D2,0.435,0.3363,0.5558
+cross_source,D1,D3,0.4959,0.4655,0.495
+random_split,D2,D2,0.8816,0.8817,
+cross_source,D2,D1,0.833,0.5405,0.0486
+cross_source,D2,D3,0.5545,0.6588,0.3271
+random_split,D3,D3,0.9895,0.9901,
+cross_source,D3,D1,0.8357,0.673,0.1538
+cross_source,D3,D2,0.6808,0.5948,0.3087
+unseen_font,D3,D3:heldout_groups,0.0,0.0,
+unseen_font,D2,D2:heldout_groups,0.9147,0.9149,

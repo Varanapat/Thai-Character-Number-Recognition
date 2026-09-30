@@ -1,0 +1,30 @@
+strategy,accuracy,macro_f1,n_test,field,held_out
+S1/S2 single_D1,0.652,0.507,16316,held_out,
+S1/S2 single_D2,0.8152,0.7059,16316,held_out,
+S1/S2 single_D3,0.7832,0.7437,16316,held_out,
+S4 majority_vote,0.8746,0.8485,16316,held_out,
+S5 prob_average,0.8946,0.8732,16316,held_out,
+S5b prob_avg_masked,0.894,0.8721,16316,held_out,
+S6 weighted_prob,0.8946,0.8768,16316,held_out,
+S6b weighted_masked,0.8943,0.8765,16316,held_out,
+single_D2 -> D1,0.833,0.5405,62393,loso,D1
+single_D3 -> D1,0.8357,0.673,62393,loso,D1
+S4 majority_vote(D2+D3) -> D1,0.8622,0.683,62393,loso,D1
+S5 prob_average(D2+D3) -> D1,0.8628,0.6834,62393,loso,D1
+S5b prob_avg_masked(D2+D3) -> D1,0.8627,0.681,62393,loso,D1
+S6 weighted_prob(D2+D3) -> D1,0.8614,0.6689,62393,loso,D1
+S6b weighted_masked(D2+D3) -> D1,0.8613,0.6676,62393,loso,D1
+single_D1 -> D2,0.435,0.3363,76927,loso,D2
+single_D3 -> D2,0.6808,0.5948,76927,loso,D2
+S4 majority_vote(D1+D3) -> D2,0.6838,0.5899,76927,loso,D2
+S5 prob_average(D1+D3) -> D2,0.6842,0.5902,76927,loso,D2
+S5b prob_avg_masked(D1+D3) -> D2,0.6829,0.589,76927,loso,D2
+S6 weighted_prob(D1+D3) -> D2,0.6947,0.6002,76927,loso,D2
+S6b weighted_masked(D1+D3) -> D2,0.6941,0.5996,76927,loso,D2
+single_D1 -> D3,0.4959,0.4655,23835,loso,D3
+single_D2 -> D3,0.5545,0.6588,23835,loso,D3
+S4 majority_vote(D1+D2) -> D3,0.5969,0.6855,23835,loso,D3
+S5 prob_average(D1+D2) -> D3,0.5966,0.6857,23835,loso,D3
+S5b prob_avg_masked(D1+D2) -> D3,0.5959,0.6852,23835,loso,D3
+S6 weighted_prob(D1+D2) -> D3,0.5779,0.6778,23835,loso,D3
+S6b weighted_masked(D1+D2) -> D3,0.5761,0.6765,23835,loso,D3
