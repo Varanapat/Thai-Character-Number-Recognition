@@ -1,0 +1,46 @@
+# ---------- สภาพแวดล้อมของเครื่อง ----------
+.venv/
+__pycache__/
+.DS_Store
+.ipynb_checkpoints/
+*.log
+*.pid
+
+# ---------- ข้อมูลดิบ (ใหญ่มาก ไม่ขึ้น GitHub) ----------
+# แชร์ผ่าน GitHub Release หรือ Google Drive แล้วใส่ลิงก์ไว้ใน README แทน
+Dataset/source/
+Dataset/character/
+Dataset/number/
+Dataset/Mixed/
+Dataset_Source/
+PrintAksorn_dataset/
+test_dataset/
+*.zip
+*.tar.gz
+*.rar
+
+# ---------- cache ของรูปที่ preprocess แล้ว (1.4 GB) ----------
+data/
+
+# ---------- ผลการทดลองที่สร้างใหม่ได้ ----------
+outputs/
+experiments/
+_review_snapshots/
+results/checkpoints/
+
+# ผลรายรูปไฟล์ละหลาย MB (สร้างใหม่ได้จากโมเดล)
+results/predictions/
+Project_deeplearn/results/predictions/
+
+# ---------- โมเดล ----------
+# ไม่เอาทั้งหมดโดยปริยาย ถ้าจะส่งโมเดลตัวสุดท้ายให้ใช้ git add -f ทีละไฟล์
+*.pt
+*.pth
+*.npz
+*.npy
+models/_smoke_*/
+Project_deeplearn/
+
+
+
+*.bak*
