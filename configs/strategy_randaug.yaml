@@ -1,0 +1,24 @@
+# ค่ากลางของทุกไฟล์ strategy_*.py
+# architecture ล็อกไว้ที่ MobileNetV3-Small ในโค้ด (Model_strategy.md ข้อ 2)
+# ทุก strategy ใช้ค่าชุดนี้เหมือนกันหมด ตัวแปรเดียวคือวิธีเทรน/วิธีรวมผล (ข้อ 20)
+
+val_ratio: 0.2   # train 80 / val 20 ตามที่ขอ
+test_ratio: 0.0  # ไม่กันชุด test ต่างหาก (S3_combined.py ปรับให้รองรับกรณีนี้แล้ว)
+
+augmentation: thai_randaugment   # rerun S3_combined: RESULT_README ข้อ 4 บอกว่า thai_randaugment ช่วย cross-source ดีกว่า thai_specific
+img_size: 96
+batch_size: 128
+epochs: 10
+lr: 0.001
+weight_decay: 0.0001
+label_smoothing: 0.1
+pretrained: true
+seed: 42
+device: auto
+early_stop_patience: 3
+eval_batch_size: 256
+
+imbalance: none              # เปลี่ยนเป็น weighted_sampling ได้ถ้าจะทดลองเรื่อง class imbalance
+sampling_power: 0.5
+
+limit_per_class: null

@@ -1,0 +1,25 @@
+# Model_strategy.md — เปรียบเทียบ training strategy ของ MobileNetV3-Small
+# สถาปัตยกรรมคงที่ ตัวแปรเดียวคือวิธีเทรนและวิธีรวมผล (ข้อ 20 ของเอกสาร)
+
+model: mobilenet_v3_small
+augmentation: thai_specific   # ต้องเหมือนกับที่ใช้เทรนโมเดลรายแหล่งเดิม ห้ามเปลี่ยนกลางคัน
+
+img_size: 96
+batch_size: 128
+epochs: 10
+lr: 0.001
+weight_decay: 0.0001
+label_smoothing: 0.1
+pretrained: true
+seed: 42
+device: auto
+early_stop_patience: 3
+eval_batch_size: 256
+
+imbalance: none
+sampling_power: 0.5
+
+# ใช้โมเดลรายแหล่งจาก Experiment D ที่เทรนด้วยโปรโตคอลเดียวกันไว้แล้ว (ไม่ต้องเทรนซ้ำ)
+reuse_generalization_models: true
+
+limit_per_class: null
